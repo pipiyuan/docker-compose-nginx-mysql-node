@@ -14,7 +14,8 @@ export default (appInfo: EggAppInfo) => {
 
     const userConfig = {
         // myAppName: 'egg',
-        sequelize: {
+        sequelize: { 
+            //！！！！1 此处填写的是查询时 的数据库信息，database/config.json 里数据库配置 是用于 Migrations
             username: "root",
             password: "123456",
             database: "database_development",

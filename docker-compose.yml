@@ -42,7 +42,7 @@ services:
   mysql:
     image: mysql:5.7
     ports:
-      - "3306"
+      - "3306:3306"
     volumes:
       - "./mysql/conf/my.cnf:/etc/my.cnf"
       - "./mysql/init_sql_or_sh:/docker-entrypoint-initdb.d"  #！！！！！！重点： 此处必须是 文件夹映射到 docker-entrypoint-initdb.d，否则会报错 

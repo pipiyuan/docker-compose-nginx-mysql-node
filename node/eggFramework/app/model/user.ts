@@ -4,6 +4,8 @@ import { Application } from 'egg';
 
 export default function (app: Application) {
     const { STRING, INTEGER, DATE } = app.Sequelize;
+
+    //  创建数据库的时候 默认会加上 s,如 user，则数据库里是 users，所以默认都加上 s复数
     const User = app.model.define('user', {
         id: {
             type: INTEGER,
@@ -12,8 +14,8 @@ export default function (app: Application) {
         },
         name: STRING(30),
         age: INTEGER,
-        created_at: DATE(6),
-        updated_at: DATE(6),
+        created_at: DATE,
+        updated_at: DATE,
     });
 
     return class extends User {
