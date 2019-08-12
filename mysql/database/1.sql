@@ -17,6 +17,14 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+-- 建库
+-- CREATE DATABASE IF NOT EXISTS `database_development`;
+DROP DATABASE IF EXISTS `database_development`;
+CREATE DATABASE `database_development`;
+
+-- 切换数据库
+USE `database_development`;
+
 -- ----------------------------
 -- Table structure for users
 -- ----------------------------
@@ -34,7 +42,7 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, '小丽', 18, '2019-08-08 16:23:29', '2019-08-09 16:23:38');
+INSERT INTO `users` VALUES (1, '小丽2', 18, '2019-08-08 16:23:29', '2019-08-09 16:23:38');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

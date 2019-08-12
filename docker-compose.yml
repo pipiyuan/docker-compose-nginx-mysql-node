@@ -47,11 +47,11 @@ services:
       - "./mysql/conf/my.cnf:/etc/my.cnf"
       - "./mysql/init_sql_or_sh:/docker-entrypoint-initdb.d"  #！！！！！！重点： 此处必须是 文件夹映射到 docker-entrypoint-initdb.d，否则会报错 
       - "./mysql/database:/home/mysql_sql"
-      - "./mysql/logs:/var/lib/mysql"     # /var/lib/mysql 日志目录，是在my.cnf里配置的
+      # - "./mysql/logs:/var/lib/mysql"     # /var/lib/mysql 日志目录，是在my.cnf里配置的
     container_name: "mysql"
     environment:
       MYSQL_ROOT_PASSWORD: "123456"
-      INIT_DB_SHELL_PATH: "/home/mysql_sql"
+      # INIT_DB_SHELL_PATH: "/docker-entrypoint-initdb.d"
     networks:
       - default
 # 使用networks命令，即可方便实现服务间的网络隔离与连接。默认容器间都使用同一个网络，定义网络名为byfn，那么最终生产的网络名为：<当前路径名_byfn>
