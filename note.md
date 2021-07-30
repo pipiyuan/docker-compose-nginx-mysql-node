@@ -79,6 +79,9 @@ LABEL description = "描述"
 VOLUME /myvol
 ```
 
+#### 重启docker服务  
+  * sudo service docker restart
+
 **备注：**
 >1、Dockerfile中RUN，CMD和ENTRYPOINT都能够用于执行命令，下面是三者的主要用途：
 * RUN命令执行命令并创建新的镜像层，通常用于安装软件包
